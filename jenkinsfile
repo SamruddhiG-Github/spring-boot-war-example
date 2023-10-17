@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-            sh ' cp spring-boot-war-example/target/hello-world.war  /mnt/apache-tomcat-9.0.80/webapps ' 
+            sh ' cp /home/ec2-user/target/hello-world.war  /mnt/apache-tomcat-9.0.80/webapps ' 
 			
             }
     }		
