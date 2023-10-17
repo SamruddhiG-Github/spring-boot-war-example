@@ -10,24 +10,21 @@ pipeline {
         stage('checkout') {
             steps {
 		sh '''
-            git clone https://github.com/Dee601/game-of-life.git
-	   cd game-of-life
+            git clone https://github.com/SamruddhiG-Github/spring-boot-war-example.git
+	   cd spring-boot-war-example
 		'''		
             }
         }
 		stage('build') {
             steps {
                 
-            sh '''
-		cd /home/ec2-user/game-of-life
-		mvn clean install
-		''' 
+            sh ' mvn clean install ' 
 
             }
         }
         stage('Deploy') {
             steps {
-            sh ' cp game-of-life/gameoflife-web/target/gameoflife.war  /mnt/apache-tomcat-9.0.80/webapps ' 
+            sh ' cp spring-boot-war-example/target/spring-boot-war-example.jar  /mnt/apache-tomcat-9.0.80/webapps ' 
 			
             }
     }		
