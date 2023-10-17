@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-            sh ' cp /home/ec2-user/target/hello-world.war  /mnt/apache-tomcat-9.0.80/webapps ' 
+            sh ' cp /home/ec2-user/target/hello-world-0.0.1-SNAPSHOT.war  /mnt/apache-tomcat-9.0.80/webapps ' 
 			
             }
     }		
